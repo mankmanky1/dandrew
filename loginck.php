@@ -24,7 +24,7 @@ echo "<p class=data> <center>Successfully,Logged in<br>
 if($login_type == 'Admin')
 {
 print "<script>";
-print " self.location='admin.php';"; // Comment this line if you don't want to redirect
+print " self.location='admin1.php';"; // Comment this line if you don't want to redirect
 print "</script>";
 }
 else if($login_type =='Student')
