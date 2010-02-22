@@ -10,16 +10,16 @@ include('connection.php');
 switch($_SESSION['yos'])
 {
 case 1:
-$target_path = "Engineering/Year I/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
+$target_path = "submission_data/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
 break;
 case 2:
-$target_path = "Engineering/Year II/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
+$target_path = "submission_data/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
 break;
 case 3:
-$target_path = "Engineering/Year III/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
+$target_path = "submission_data/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
 break;
 case 4:
-$target_path = "Engineering/Year IV/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
+$target_path = "submission_data/".$_SESSION['sub_choice']."/".$_SESSION['assignment']."/";
 break;
 }
 //Remove the extension from the filename

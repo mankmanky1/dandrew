@@ -7,7 +7,7 @@ $userid = $_SESSION['userid'];
 $subject = $_POST['subject'];
 $query = "select * from $subject where student_num = '$userid'";
 $result = mysql_query($query);
-$subjects = mysql_fetch_array($result, MYSQL_ASSOC);//Dont forget to put MYSQL_NUM to create number indices
+@$subjects = mysql_fetch_array($result, MYSQL_ASSOC);//Dont forget to put MYSQL_NUM to create number indices
 
 ?>
 <!--Create the html table-->
@@ -19,21 +19,23 @@ $subjects = mysql_fetch_array($result, MYSQL_ASSOC);//Dont forget to put MYSQL_N
 </tr>
 <?php
 //Display the Project Submissions
-foreach($subjects AS $key=>$value)
+if($subjects!=null)
 {
-	if($key!="student_num")
+	foreach($subjects AS $key=>$value)
 	{
-		if($value == null)
+		if($key!="student_num")
 		{
-		$value = "not submitted";
+			if($value == null)
+			{
+			$value = "not submitted";
+			}
+		echo "<tr>";
+		echo"<td>".$key."</td>";
+		echo "<td>".$value."</td>";
+		echo"</tr>";
 		}
-	echo "<tr>";
-	echo"<td>".$key."</td>";
-	echo "<td>".$value."</td>";
-	echo"</tr>";
 	}
 }
-
 ?>
 </table>
 <!-- This form will choose the assignment to edit and then allow the user to upload a file-->
