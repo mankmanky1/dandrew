@@ -2,20 +2,20 @@
 
 include('connection.php');
 
-$userid = strtoupper($_POST['userid']);
+$userid = $_POST['userid'];
 $password = $_POST['password'];
 $login_type= $_POST['Type'];
 
-$query = "SELECT * FROM allusers WHERE student_num='$userid' AND password = '$password'";
+$query = "SELECT * FROM AllUsers WHERE student_num='$userid' AND password = '$password'";
 $result = mysql_query($query);
 $rec=mysql_fetch_array($result);
-
-echo "";
+$yos = $rec['yos'];
 if(($rec['student_num']==$userid)&&($rec['password']==$password)){
 
 session_start();
 $_SESSION['id']=session_id();
 $_SESSION['userid'] = $userid;
+$_SESSION['yos'] = $yos;
 
 echo "<p class=data> <center>Successfully,Logged in<br>
 <br><a href='logout.php'> Log OUT </a><br>
@@ -24,13 +24,13 @@ echo "<p class=data> <center>Successfully,Logged in<br>
 if($login_type == 'Admin')
 {
 print "<script>";
-print " self.location='admin1.php';";
+print " self.location='admin.php';"; // Comment this line if you don't want to redirect
 print "</script>";
 }
 else if($login_type =='Student')
 {
 print "<script>";
-print " self.location='student.php';";
+print " self.location='student.php';"; // Comment this line if you don't want to redirect
 print "</script>";
 }
 
