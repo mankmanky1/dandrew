@@ -6,7 +6,7 @@ $userid = $_POST['userid'];
 $password = $_POST['password'];
 $login_type= $_POST['Type'];
 
-$query = "SELECT * FROM AllUsers WHERE student_num='$userid' AND password = '$password'";
+$query = "SELECT * FROM allusers WHERE student_num='$userid'";
 $result = mysql_query($query);
 $rec=mysql_fetch_array($result);
 $yos = $rec['yos'];
