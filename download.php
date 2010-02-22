@@ -16,13 +16,13 @@ $zip_name = "uploads/${course_code}/${submission}/${course_code}_${submission}.z
 unlink($zip_name);
  
 $zip = new ZipArchive;
-$res = $zip->open($zip_name, ZIPARCHIVE::CREATE);
+$res = $zip->open($zip_name, ZIPARCHIVE::OVERWRITE);
 if ($res === TRUE) {
  
     while ($rec = mysql_fetch_array($result)) {
         $student_num = $rec['0'];
         $file_path = $rec['1'];
-	$file_name = basename($file_path);
+		$file_name = basename($file_path);
         if (file_exists($file_path)) {
 	    $zip->addEmptyDir($student_num);
 	    $add = $zip->addFile($file_path, "{$student_num}/{$file_name}");
