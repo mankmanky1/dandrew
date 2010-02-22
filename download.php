@@ -39,5 +39,11 @@ if ($res === TRUE) {
 }
  
 mysql_free_result($result);
+
+if(file_exists($zip_name)) {
+    print "<script>";
+    print " self.location='$zip_name';";
+    print "</script>";
+}
  
 ?>
