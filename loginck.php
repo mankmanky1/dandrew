@@ -2,7 +2,7 @@
 
 include('connection.php');
 
-$userid = $_POST['userid'];
+$userid = strtoupper($_POST['userid']);
 $password = $_POST['password'];
 $login_type= $_POST['Type'];
 
