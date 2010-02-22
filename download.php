@@ -11,9 +11,7 @@ $student_num = '00000000';
 $file_path = 'NULL';
 $file_name = 'NULL';
  
-$zip_name = "uploads/${course_code}/${submission}/${course_code}_${submission}.zip";
- 
-unlink($zip_name);
+$zip_name = "submission_data/${course_code}/${submission}/${course_code}_${submission}.zip";
  
 $zip = new ZipArchive;
 $res = $zip->open($zip_name, ZIPARCHIVE::OVERWRITE);
