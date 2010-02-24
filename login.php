@@ -1,3 +1,9 @@
+<?php
+@session_start();
+@session_destroy();
+unset($_SESSION);
+echo $_SESSION['login'];
+?>
 <form action='loginck.php' method=post>
 <table border='0' cellspacing='0' cellpadding='0' align=center>
 <tr id='cat'>

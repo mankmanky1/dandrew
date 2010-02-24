@@ -16,6 +16,7 @@ session_start();
 $_SESSION['id']=session_id();
 $_SESSION['userid'] = $userid;
 $_SESSION['yos'] = $yos;
+$_SESSION['login'] = "yes";
 
 echo "<p class=data> <center>Successfully,Logged in<br>
 <br><a href='logout.php'> Log OUT </a><br>

@@ -1,6 +1,15 @@
-<!-- The submissions list -->
 <?php
 @session_start();
+if (!(isset($_SESSION['login'])))
+{
+print "<script>";
+print " self.location='login.php';";
+print "</script>";
+exit();
+}
+?>
+<?php
+//@session_start();
 include ('connection.php');
 $_SESSION['sub_choice'] = $_POST['subject'];
 $userid = $_SESSION['userid'];
