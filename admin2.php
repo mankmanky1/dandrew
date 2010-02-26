@@ -4,7 +4,17 @@
 
 <?php
 @session_start();
+
+if (!(isset($_SESSION['login'])))
+{
+print "<script>";
+print " self.location='login.php';";
+print "</script>";
+exit();
+}
+
 $id = $_SESSION['id'];
+
 $course_code = $_POST['course_code'];
 $_SESSION['course_code'] = $course_code;
 
@@ -31,6 +41,8 @@ echo '</select>';
 
 Add a new submission for this course:
 <input type ='text' class='bginput' name='new_submission' >
+
+<input type="submit" value="Add" onClick="return confirm('Are you sure you want to add a new submission?')"/>
 
 </form>
 

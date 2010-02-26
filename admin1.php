@@ -4,7 +4,17 @@
 
 <?php
 @session_start();
+
+if (!(isset($_SESSION['login'])))
+{
+print "<script>";
+print " self.location='login.php';";
+print "</script>";
+exit();
+}
+
 $id = $_SESSION['id'];
+
 $userid = $_SESSION['userid'];
 
 include('connection.php');
