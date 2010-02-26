@@ -1,5 +1,16 @@
 <?php
-session_start();
+@session_start();
+if (!(isset($_SESSION['login'])))
+{
+print "<script>";
+print " self.location='login.php';";
+print "</script>";
+exit();
+}
+?>
+
+<?php
+//session_start();
 $_SESSION['assignment'] = $_POST['assignment'];
 $assignment = $_POST['assignment'];
 echo "<h3>You have chosen to submit/resubmit ".$assignment."</h3>";

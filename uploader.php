@@ -1,5 +1,16 @@
 <?php
 @session_start();
+if (!(isset($_SESSION['login'])))
+{
+print "<script>";
+print " self.location='login.php';";
+print "</script>";
+exit();
+}
+?>
+
+<?php
+//@session_start();
 include('connection.php');
 //Set the variables for the query to update the database
 	$sub_choice = $_SESSION['sub_choice'];

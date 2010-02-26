@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!-- This Site Was Designed By Wayne D. Fields http://illusivedesign.cjb.net -->
 <!-- Please make sure you read all of the read me file that came with this template then
@@ -98,6 +99,7 @@ background-repeat: repeat-x}
 <img src="images/ballet_lg.gif" width="19" height="18" border="0">
 <!-- The login form-->
 <br></br>
+
 <form action='loginck.php' method=post>
 <table border='0' cellspacing='0' cellpadding='0' align=center>
 <tr id='cat'>
