@@ -1,3 +1,50 @@
+<!--START HTML TEMPLATE PART I-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- This Site Was Designed By Wayne D. Fields http://illusivedesign.cjb.net -->
+<!-- Please make sure you read all of the read me file that came with this template then
+you may delete this comment -->
+<html>
+<head>
+<title>Student Submission System</title>
+<meta name="description" content="Insert Description Here">
+<meta name="keywords" content="Insert Keywords Here">
+<style type="text/css">
+
+a:link, a:active, a:visited {
+color: #4A265A; 
+text-decoration: underline}
+
+a:hover {
+color: #4A265A; 
+text-decoration: none}
+
+body {
+background-image: URL(images/bg.gif);
+background-repeat: repeat-x}
+  
+
+</style>
+</head>
+<body bgcolor="#ffffff" marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width = "130"><img src="images/wits.jpg" width="100" height="100" align = "left"></td>
+<td><font face='verdana, arial, helvetica' size='4' align='center'>Wits Online Submission System</font>  </td>
+</tr>
+<tr>
+
+<td width="100"></td>
+<td align="center">
+
+<!-- Content --><br><br>
+<img src="images/hr_top.gif" width="528" height="58" border="0">
+
+<blockquote><font face="Arial" size="2" color="#000000"><strong>
+<img src="images/ballet_lg.gif" width="19" height="18" border="0">
+<!--END HTML TEMPLATE PART I-->
+<!--START USER CODE-->
+<br></br>
 <?php
 @session_start();
 if (!(isset($_SESSION['login'])))
@@ -70,13 +117,12 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 	$result = mysql_query($query);
 	
 	//Now offer redirection options
-	echo "<h4>Would you like to go to the submissions page or logout</h4>
-	<br><a href='login.php'> Log Out </a><br>
-	<br><a href='student.php'> Submissions Page</a><br>";
-	
+	echo "<h4>Would you like to go to make another submission or logout</h4>";
+	echo'<INPUT TYPE="button" VALUE="New Submission" onClick="location.href =\'student.php\'">';
+	echo'<INPUT TYPE="button" VALUE="Log out" onClick="location.href =\'login.php\'">';
 	} else{
-    echo "There was an error uploading the file, please try again!";
-	echo "<br><a href='student.php'> Submissions Page</a><br>";
+    echo "There was an error uploading the file, please try again!<br>";
+	echo'<INPUT TYPE="button" VALUE="Try Again" onClick="location.href =\'upload_submission.php\'"><br><br>';
 }
 ?>
 <!--The extension is removed from the file name -->
@@ -91,3 +137,25 @@ $exts = $exts[$n];
 return $exts; 
 } 
 ?>
+
+<!--END USER CODE-->
+<!--START HTML TEMPLATE PART II-->
+<img src="images/ballet_lg.gif" width="19" height="18" border="0">
+</strong></font></blockquote>
+<br><br><br><br><br><br>
+
+<img src="images/hr_bot.gif" width="528" height="44" border="0">
+<!-- Content -->
+
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
+<!--END HTML TEMPLATE PART II-->
