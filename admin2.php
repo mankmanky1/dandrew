@@ -96,7 +96,7 @@ echo '</select>';
 
 
 
-<form enctype="multipart/form-data" action="add_course.php" method="POST">
+<form enctype="multipart/form-data" action="add_submission.php" method="POST">
 Add a new submission for this course:<br>
 <input type ='text' class='bginput' name='new_submission' >
 <input type="submit" value="Add"/>
@@ -108,7 +108,7 @@ Add a new submission for this course:<br>
 
 
 
-<form name="deletion_form" enctype="multipart/form-data" action="delete_course.php" method="POST">
+<form name="deletion_form" enctype="multipart/form-data" action="delete_submission.php" method="POST" onSubmit ="return confirm('Are you sure you want to delete this submission?')">
 Delete a submission from this course:
 <?php
 echo '<select name="deletion">';
@@ -123,7 +123,7 @@ if (mysql_num_rows($result) > 0) {
 }
 echo '</select><br><br>';
 
-echo "<input type=\"submit\" value=\"Delete\" onClick=\"confirm('Are you sure you want to delete this submission?')\"/>";
+echo "<input type=\"submit\" value=\"Delete\"/>";
 ?>
 </form>
 
@@ -134,7 +134,7 @@ echo "<input type=\"submit\" value=\"Delete\" onClick=\"confirm('Are you sure yo
 
 
 <form enctype="multipart/form-data">
-<INPUT TYPE="button" VALUE="Back" onClick="location.href ='admin1.php'">
+<INPUT TYPE="button" VALUE="Re-select Course" onClick="location.href ='admin1.php'">
 <INPUT TYPE="button" VALUE="Log out" onClick="location.href ='login.php'">
 </form>
 

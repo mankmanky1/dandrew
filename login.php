@@ -36,7 +36,7 @@ background-repeat: repeat-x}
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td width = "130"><img src="images/wits.jpg" width="100" height="100" align = "left"></td>
-<td><font face='verdana, arial, helvetica' size='4' align='center'>Wits Online Submission System</font>  </td>
+<td><font face='verdana, arial, helvetica' size='6' align='center'>Wits Online Submission System</font>  </td>
 </tr>
 <tr>
 
@@ -53,7 +53,7 @@ background-repeat: repeat-x}
 <br></br>
 
 <form action='loginck.php' method=post>
-<table border='0' cellspacing='0' cellpadding='0' align=center>
+<table border='0' cellspacing='8' cellpadding='0' align=center>
 <tr id='cat'>
 <tr> <td bgcolor='#ffffff' ><font face='verdana, arial, helvetica' size='2' align='left'>  Login ID    
 </font></td> <td bgcolor='#f1f1f1' align='center'><font face='verdana, arial, helvetica' size='2' >
@@ -76,6 +76,7 @@ background-repeat: repeat-x}
 </select>
 </td>
 </tr>
+
 <tr> <td bgcolor='#f1f1f1' colspan='2' align='center'><font face='verdana, arial, helvetica' size='2' align='center'> 
 <input type='submit' value='Submit'> <input type='reset' value='Reset'>
 </font></td> </tr>

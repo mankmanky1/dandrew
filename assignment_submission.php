@@ -30,7 +30,7 @@ background-repeat: repeat-x}
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td width = "130"><img src="images/wits.jpg" width="100" height="100" align = "left"></td>
-<td><font face='verdana, arial, helvetica' size='4' align='center'>Wits Online Submission System</font>  </td>
+<td><font face='verdana, arial, helvetica' size='6' align='center'>Wits Online Submission System</font>  </td>
 </tr>
 <tr>
 
@@ -70,10 +70,10 @@ $userid = $_SESSION['userid'];
 $query = "select * from $subject where student_num = '$userid'";
 $result = mysql_query($query);
 @$subjects = mysql_fetch_array($result, MYSQL_ASSOC);//Dont forget to put MYSQL_NUM to create number indices
-
+echo"<h4>The Assignments due for $subject are shown below:</h4>";
 ?>
 <!--Create the html table-->
-<h4>The Assignments due are below:</h4>
+
 <table border = "1">
 <tr>
 <th>Assignment Due</th>
@@ -89,7 +89,7 @@ if($subjects!=null)
 		{
 			if($value == null)
 			{
-			$value = "not submitted";
+			$value = "no submission";
 			}
 		echo "<tr>";
 		echo"<td>".$key."</td>";
@@ -101,8 +101,9 @@ if($subjects!=null)
 ?>
 </table>
 <!-- This form will choose the assignment to edit and then allow the user to upload a file-->
-<h4>If you would like to submit/resubmit an assignment, please choose the assignment below<h4>
+<br>If you would like to submit/resubmit an assignment,<br> please choose the assignment below<br>
 <form action = "upload_submission.php" method = "post">
+<br>
 <select name="assignment">
 <?php
 foreach($subjects AS $key=>$value)
@@ -115,8 +116,11 @@ foreach($subjects AS $key=>$value)
 ?>
 </select>
 <br></br>
-<INPUT TYPE="button" VALUE="Back" onClick="location.href ='student.php'">
+
 <input type="submit" value="Next">
+<br><br><br><hr><br>
+<INPUT TYPE="button" VALUE="Re-select Course" onClick="location.href ='student.php'">
+<INPUT TYPE="button" VALUE="Log out" onClick="location.href ='login.php'">
 </form>
 
 <!--END USER CODE-->

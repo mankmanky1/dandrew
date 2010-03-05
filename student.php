@@ -30,7 +30,7 @@ background-repeat: repeat-x}
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td width = "130"><img src="images/wits.jpg" width="100" height="100" align = "left"></td>
-<td><font face='verdana, arial, helvetica' size='4' align='center'>Wits Online Submission System</font>  </td>
+<td><font face='verdana, arial, helvetica' size='6' align='center'>Wits Online Submission System</font>  </td>
 </tr>
 <tr>
 
@@ -76,7 +76,9 @@ $i++;
 }
 ?>
 </select>
+<br><br>
 <input type='submit' value='Next'><br>
+<br><br><br><br><hr><br>
 <INPUT TYPE="button" VALUE="Log out" onClick="location.href ='login.php'">
 </form>
 
@@ -84,7 +86,6 @@ $i++;
 <!--START HTML TEMPLATE PART II-->
 <img src="images/ballet_lg.gif" width="19" height="18" border="0">
 </strong></font></blockquote>
-<br><br><br><br><br><br>
 
 <img src="images/hr_bot.gif" width="528" height="44" border="0">
 <!-- Content -->

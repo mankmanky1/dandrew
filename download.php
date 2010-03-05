@@ -47,7 +47,7 @@ background-repeat: repeat-x}
 <br></br>
 
 <?php
-session_start();
+@session_start();
 
 if (!(isset($_SESSION['login'])))
 {
@@ -104,6 +104,8 @@ mysql_free_result($result);
 ?>
 
 <br><br><br><br><hr><br>
+<INPUT TYPE="button" VALUE="Re-select Submission" onClick="location.href ='admin2.php'">
+<INPUT TYPE="button" VALUE="Re-select Course" onClick="location.href ='admin1.php'">
 <INPUT TYPE="button" VALUE="Back" onClick="location.href ='admin3.php'">
 <INPUT TYPE="button" VALUE="Log out" onClick="location.href ='login.php'">
 <br><br>

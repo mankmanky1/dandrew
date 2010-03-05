@@ -12,38 +12,43 @@ $query = "SELECT * FROM allusers WHERE student_num='$userid'";
 $result = mysql_query($query);
 $rec=mysql_fetch_array($result);
 $yos = $rec['yos'];
+@session_start();
 if(($rec['student_num']==$userid)&&($rec['password']==$password)){
 
-session_start();
+
 $_SESSION['id']=session_id();
 $_SESSION['userid'] = $userid;
 $_SESSION['yos'] = $yos;
 $_SESSION['login'] = "yes";
 
-echo "<p class=data> <center>Successfully,Logged in<br>
-<br><a href='logout.php'> Log OUT </a><br>
-<br><a href=student.php>Click here if your browser is not redirecting automatically or you don't want to wait.</a><br></center>";
 
-if($login_type == 'Admin')
+if($login_type == 'Admin' && $rec['admin_course_codes']!=null)
 {
 print "<script>";
-print " self.location='admin1.php';"; // Comment this line if you don't want to redirect
+print " self.location='admin1.php';"; 
 print "</script>";
 }
-else if($login_type =='Student')
+else if($login_type =='Student'&& $rec['student_course_codes']!=null)
 {
 print "<script>";
-print " self.location='student.php';"; // Comment this line if you don't want to redirect
+print " self.location='student.php';"; 
+print "</script>";
+}
+else
+{
+$_SESSION['error_message'] = "You do not have priviledges to login with type $login_type";
+print "<script>";
+print " self.location='login_error.php';"; 
 print "</script>";
 }
 
 } 	
 else {
 
-session_unset();
-echo "<font face='Verdana' size='2' color=red>Wrong Login. Use your correct Userid and Password and Try <br><center>
-<input type='button' value='Retry' onClick='history.go(-1)'></center>";
-
+$_SESSION['error_message'] = "Incorrect Login ID or password";
+print "<script>";
+print " self.location='login_error.php';"; 
+print "</script>";
 }
 
 ?>

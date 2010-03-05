@@ -30,7 +30,7 @@ background-repeat: repeat-x}
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td width = "130"><img src="images/wits.jpg" width="100" height="100" align = "left"></td>
-<td><font face='verdana, arial, helvetica' size='4' align='center'>Wits Online Submission System</font>  </td>
+<td><font face='verdana, arial, helvetica' size='6' align='center'>Wits Online Submission System</font>  </td>
 </tr>
 <tr>
 
@@ -107,7 +107,8 @@ foreach($file_result AS $key=>$value)
 
 if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
     echo "The file ". $filename.".".$ext. " has been uploaded<br><br>";
-	
+	$filepath = $filename.".".$ext;
+	echo "The file is ".$_FILES['uploadedfile']['size']." bytes<br><br>";
 	//Delete the old file
 	$tmpfile = "$original_target_path".$tmp_file;
 	@unlink($tmpfile);
@@ -117,11 +118,11 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 	$result = mysql_query($query);
 	
 	//Now offer redirection options
-	echo "<h4>Would you like to go to make another submission or logout</h4>";
-	echo'<INPUT TYPE="button" VALUE="New Submission" onClick="location.href =\'student.php\'">';
+	echo "<br><hr><br>";
+	echo'<INPUT TYPE="button" VALUE="Home" onClick="location.href =\'student.php\'">';
 	echo'<INPUT TYPE="button" VALUE="Log out" onClick="location.href =\'login.php\'">';
 	} else{
-    echo "There was an error uploading the file, please try again!<br>";
+    echo "There was an error uploading the file, please try again!<br><br>";
 	echo'<INPUT TYPE="button" VALUE="Try Again" onClick="location.href =\'upload_submission.php\'"><br><br>';
 }
 ?>
@@ -140,9 +141,10 @@ return $exts;
 
 <!--END USER CODE-->
 <!--START HTML TEMPLATE PART II-->
+<br><br><br>
 <img src="images/ballet_lg.gif" width="19" height="18" border="0">
 </strong></font></blockquote>
-<br><br><br><br><br><br>
+<br>
 
 <img src="images/hr_bot.gif" width="528" height="44" border="0">
 <!-- Content -->

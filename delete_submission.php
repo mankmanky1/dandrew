@@ -20,6 +20,7 @@ if(isset($course_code) && isset($deletion))
 include('connection.php');
 $query = "ALTER TABLE $course_code drop $deletion;";
 $result = mysql_query($query);
+rmdir('submission_data/'.$course_code.'/'.$deletion.'/');
 }
 
 print "<script>";

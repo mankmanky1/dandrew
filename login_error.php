@@ -45,46 +45,14 @@ background-repeat: repeat-x}
 <!--END HTML TEMPLATE PART I-->
 <!--START USER CODE-->
 <br></br>
-
-<form enctype="multipart/form-data" action="download.php" method="POST">
-
 <?php
 @session_start();
-
-if (!(isset($_SESSION['login'])))
-{
-print "<script>";
-print " self.location='login.php';";
-print "</script>";
-exit();
-}
-
-$id = $_SESSION['id'];
-
-$submission = $_POST['submission'];
-if(!(isset($submission))) {
-$submission = $_SESSION['submission'];
-}
-
-$_SESSION['submission'] = $submission;
-
-$course_code = $_SESSION['course_code'];
-
-echo "<font face='verdana, arial, helvetica' size='3' align='left'>Administration Page for $course_code - $submission</font><br><br><br>";
+$error_message = $_SESSION['error_message'];
+echo"Login Error: $error_message<br><br>";
 ?>
+<input type='button' value='Retry' onClick="self.location = 'login.php'">
+<br><br>
 
-Click "Download" to access a zip file containing <br>
-all the files uploaded for this submission. <br><br>
-
-
-<input type="submit" value="Download" />
-<br><br><br><br><hr><br>
-<INPUT TYPE="button" VALUE="Re-select Submission" onClick="location.href ='admin2.php'">
-<INPUT TYPE="button" VALUE="Re-select Course" onClick="location.href ='admin1.php'">
-<INPUT TYPE="button" VALUE="Log out" onClick="location.href ='login.php'">
-
-
-</form>
 
 <!--END USER CODE-->
 <!--START HTML TEMPLATE PART II-->
