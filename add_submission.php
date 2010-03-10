@@ -18,7 +18,7 @@ $new_submission = $_POST['new_submission'];
 if(isset($course_code) && isset($new_submission))
 {
 include('connection.php');
-$query = "ALTER TABLE $course_code ADD $new_submission VARCHAR(80);";
+$query = "ALTER TABLE $course_code ADD `$new_submission` VARCHAR(80);";
 $result = mysql_query($query);
 mkdir('submission_data/'.$course_code.'/'.$new_submission.'/');
 }

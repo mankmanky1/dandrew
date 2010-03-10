@@ -70,12 +70,12 @@ $rec = mysql_fetch_array($result);
 $course_code_string = $rec['admin_course_codes'];
 
 echo "<font face='verdana, arial, helvetica' size='3' align='left'>Course Selection Page for user $userid<br><br><br></font>";
-echo "Please select the course you wish to access: "; 
+echo "'Please' select the course you wish to access: "; 
 
 $course_code = strtok($course_code_string, ",");
 echo '<select name="course_code">';
 while ($course_code !== false) {
-    echo "<option value = $course_code>$course_code</option>";
+    echo "<option value = '$course_code'>$course_code</option>";
     $course_code = strtok(",");
 }
 echo '</select>';

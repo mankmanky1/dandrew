@@ -93,7 +93,7 @@ Result is "target path/filename.extension" */
 $target_path = $target_path . $filename.".".$ext;
 
 //Here we store the previous file name so that the file can be deleted
-$query = "select $assignment from $sub_choice where student_num = '$student_num'"; 
+$query = "select `$assignment` from $sub_choice where student_num = '$student_num'"; 
 $result = mysql_query($query);
 $file_result = mysql_fetch_array($result, MYSQL_ASSOC);
 //$tmp_file = $file_result['$assignment'];
@@ -114,7 +114,7 @@ if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
 	@unlink($tmpfile);
 	
 	//Update the database with the new filename
-	$query = "update $sub_choice set $assignment = '$filename.$ext' where student_num='$student_num'";	
+	$query = "update $sub_choice set `$assignment` = '$filename.$ext' where student_num='$student_num'";	
 	$result = mysql_query($query);
 	
 	//Now offer redirection options

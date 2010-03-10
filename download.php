@@ -62,7 +62,7 @@ $course_code = $_SESSION['course_code'];
  
  
 include('connection.php');
-$query = "select student_num, $submission from $course_code";
+$query = "select student_num, `$submission` from $course_code";
 $result = mysql_query($query);
 $student_num = '00000000';
 $file_root = "submission_data/${course_code}/${submission}/";
@@ -82,7 +82,7 @@ if ($res === TRUE) {
         $student_num = $rec['0'];
         $file_name = $rec['1'];
 	$file_path = $file_root.$file_name;
-        if (file_exists($file_path)) {
+        if (isset($file_name) && file_exists($file_path) && $file_name !== "") {
 	    $zip->addEmptyDir($student_num);
 	    $add = $zip->addFile($file_path, "{$student_num}/{$file_name}");
 	    echo "{$student_num} - {$file_name} <br>";
@@ -93,7 +93,7 @@ if ($res === TRUE) {
  
     $res2 = $zip->close();
     if ($res2 !== TRUE) {
-	echo "Error closing ZIP file";
+	echo "Error closing ZIP file - please contact the site administrator";
     }
  
  

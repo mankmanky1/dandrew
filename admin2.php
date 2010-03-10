@@ -79,7 +79,7 @@ $result = mysql_query("SHOW COLUMNS FROM $course_code");
 if (mysql_num_rows($result) > 0) {
     while ($row = mysql_fetch_array($result)) {
 	if($row[0] !== 'student_num') {
-            echo "<option value = $row[0]>$row[0]</option>";
+            echo "<option value = '$row[0]'>$row[0]</option>";
 	}	
     }
 }
@@ -117,7 +117,7 @@ $result = mysql_query("SHOW COLUMNS FROM $course_code");
 if (mysql_num_rows($result) > 0) {
     while ($row = mysql_fetch_array($result)) {
 	if($row[0] !== 'student_num') {
-            echo "<option value = $row[0]>$row[0]</option>";
+            echo "<option value = '$row[0]'>$row[0]</option>";
 	}	
     }
 }
